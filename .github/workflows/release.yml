@@ -16,15 +16,22 @@ jobs:
       - name: Create Release Archive
         run: git archive --format=zip --output=release.zip HEAD
 
+      - name: Create TAR.GZ Archive
+        run: git archive --format=tar.gz --output=release.tar.gz HEAD
+
       - name: Upload Release Archive
         uses: actions/upload-artifact@v4
         with:
           name: release-archive
-          path: release.zip
+          path: |
+            release.zip
+            release.tar.gz
 
       - name: Publish Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release.zip
+          files: |
+            release.zip
+            release.tar.gz
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}

@@ -26,5 +26,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: release.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        #env:
+         # GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}

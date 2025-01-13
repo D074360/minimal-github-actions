@@ -23,7 +23,7 @@ jobs:
           path: release.zip
 
       - name: Publish Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v4
         with:
           files: release.zip
         env:
